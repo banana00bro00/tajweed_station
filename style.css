@@ -1,0 +1,437 @@
+@font-face {
+    font-family: 'thuluth2';
+    src: url(font/thuluth2.otf);
+}
+
+@font-face {
+    font-family: 'thuluth';
+    src: url(font/thuluth.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'thuluth2';
+    color: var(--txtColor);
+}
+
+body{
+    background-image: url(img/indieground-design-vgFESKJqUyo-unsplash.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    width: 100%;
+    min-height: 100vh;
+}
+
+html {
+    background: var(--bgColor);
+    filter: sepia(25%) grayscale(15%);
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --txtColor: #0c0c0c;
+    --bgColor: #fcedd5;
+}
+
+section {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 650px rgba(201, 179, 109, 0.7);
+    align-items: center;
+    text-align: center;
+    padding: 3vw;
+}
+
+/* loader */
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bgColor);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 650px rgba(222, 198, 122, 0.7);
+    transform: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden{
+    opacity: 0;
+    visibility: hidden ;
+}
+
+.loader::after{
+    content: '';
+    width: 75px;
+    height: 75px;
+    border: 15px solid var(--txtColor);
+    border-top-color: var(--bgColor);
+    border-radius: 50%;
+    animation: loading .75s ease-in infinite;
+}
+
+@keyframes loading {
+    from { transform: rotate(0turn);}
+    to { transform: rotate(1turn);}
+}
+
+/* no enter net */
+
+#noEnterNet {
+    background-color: var(--txtColor);
+    color: var(--bgColor);
+    border-radius: 45px 45px;
+    min-width: 200px;
+    padding: 10px;
+    margin-left: -125px;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    align-items: center;
+    z-index: 99999;
+    position: fixed;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    visibility: hidden;
+}
+
+#noEnterNet.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/* header */
+header{
+    padding: -25px 10px;
+    display: flex;
+    font-size: 45px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    border-bottom: solid 2px var(--txtColor);
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+}
+
+.logo{
+    font-size: 45px;
+    font-weight: 575;
+}
+
+.logo a{
+    font-family: 'thuluth';
+}
+
+.nav-item {
+    display: flex;
+}
+
+.nav-item a {
+    margin: 10px;
+    font-size: 35px;
+    font-family: 'thuluth';
+    transition: all .5s ease;
+}
+
+.nav-item a:hover {
+    font-size: 30px;
+}
+/* main */
+#main{
+    padding: 250px 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.bg-img-2{
+    box-shadow: 0 0 65px black,inset 0 0 75px black;
+    background-image: url(img/haci-elmas-uyDdZgW3q-M-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: sepia(75%) grayscale(45%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-img-3 {
+    box-shadow: 0 0 65px black,inset 0 0 75px black;
+    background-image: url(img/the-cleveland-museum-of-art-bILLmnMghJA-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: sepia(75%) grayscale(45%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-img-4 {
+    box-shadow: 0 0 65px black,inset 0 0 75px black;
+    background-image: url(img/indra-projects-nNNCmnY5Kls-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: sepia(75%) grayscale(45%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-img{
+    box-shadow: 0 0 65px black,inset 0 0 75px black;
+    background-image: url(img/anis-coquelet-LanJEVFzxPw-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: sepia(75%) grayscale(45%);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title{
+    font-size: 150px;
+    font-weight: lighter;
+    font-family: 'thuluth';
+}
+
+/* about */
+#about{
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+/* sections */
+.card {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 35px 20px;
+    border-radius: 25px;
+    background: #faf3ea;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 250px rgba(222, 198, 122, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: .50s ease;
+}
+
+.card:hover{
+    background-color: #e7e7e7;
+    border-radius: 45px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
+}
+
+.card h1 {
+    font-size: 75px;
+    font-family: 'thuluth';
+    font-weight: lighter;
+}
+
+.card h3 {
+    font-size: 35px;
+}
+
+.card a{
+    color: #0c2a8a;
+    text-decoration: underline;
+}
+
+.card .a-card{
+    font-size: 45px;
+    font-family: 'thuluth';
+}
+/* section-text */
+#section-text p{
+    font-size: 75px;
+    display: block;
+}
+
+.up-btn{
+    background-color: var(--bgColor);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 250px rgba(222, 198, 122, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 35%;
+    border: none;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    position: sticky;
+    top: 90%;
+    left: 95%;
+    padding: 15px 25px;
+    margin-top: 1000px;
+    transition: .50s ease;
+}
+
+.up-btn:hover{
+    border-radius: 35%;
+}
+
+.up-btn:active {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px;
+}
+
+/* footer */
+#footer{
+    background-image: url(img/indieground-design-vgFESKJqUyo-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 75px rgba(222, 198, 122, 0.7);
+    text-align: center;
+    padding: 10px 15px;
+    backdrop-filter: blur(10px);
+    background-color: var(--bgColor);
+}
+
+.title-footer{
+    font-size: 30px;
+}
+
+/* media */
+@media (max-width : 900px){
+        iframe {
+            width: 500px;
+            height: 300px;
+        }
+
+        .title{
+            font-size: 75px;
+        }
+
+        .up-btn {
+            font-size: 35px;
+            padding: 20px 25px;
+        }
+}
+
+@media (max-width : 768px){
+        header {
+            padding: -25px 5px;
+        }
+    
+        .logo {
+            font-size: 37px;
+        }
+
+        .nav-item a {
+            font-size: 30px;
+        }
+
+        .title {
+            font-size: 50px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+        
+        .card h1 {
+            font-size: 50px;
+        }
+        
+        .card h3 {
+            font-size: 25px;
+        }
+        
+        .card .a-card {
+            font-size: 25px;
+        }
+
+        #section-text p {
+            font-size: 45px;
+        }
+
+        .up-btn {
+            font-size: 25px;
+            padding: 10px 15px;
+        }
+    
+        .loader::after {
+            content: '';
+            width: 45px;
+            height: 45px;
+            border: 10px solid var(--txtColor);
+            border-top-color: var(--bgColor);
+        }
+
+        #noEnterNet {
+            font-size: 25px;
+        }
+
+        #footer {
+            padding: 5px 5px;
+        }
+    
+        .title-footer {
+            font-size: 20px;
+        }
+
+        iframe {
+            width: 300px;
+            height: 200px;
+        }
+}
